@@ -49,13 +49,13 @@ func (n *NerdGraph) QueryWithContext(ctx context.Context, query string, variable
 	return respBody, nil
 }
 
-// QueryWithResponse functions similarly to Query, but alows for full customization of the returned data payload.
+// QueryWithResponse functions similarly to Query, but allows for full customization of the returned data payload.
 // Query should be preferred most of the time.
 func (n *NerdGraph) QueryWithResponse(query string, variables map[string]interface{}, respBody interface{}) error {
 	return n.QueryWithResponseAndContext(context.Background(), query, variables, respBody)
 }
 
-// QueryWithResponseAndContext functions similarly to QueryWithContext, but alows for full customization of the returned data payload.
+// QueryWithResponseAndContext functions similarly to QueryWithContext, but allows for full customization of the returned data payload.
 // QueryWithContext should be preferred most of the time.
 func (n *NerdGraph) QueryWithResponseAndContext(ctx context.Context, query string, variables map[string]interface{}, respBody interface{}) error {
 	return n.client.NerdGraphQueryWithContext(ctx, query, variables, respBody)
